@@ -1,0 +1,15 @@
+1. What is a Half Adder?
+A half adder is the simplest digital circuit designed to add two single binary digits (bits). It accepts two inputs — typically labeled A and B — and produces two outputs: a Sum bit and a Carry bit.
+The Sum output represents the result of the addition (A XOR B), while the Carry output indicates whether a carry was generated (A AND B). However, the key limitation is that it cannot accept a carry from a previous stage, making it suitable only for adding the least significant bits in a multi-bit operation.
+2. What is a Full Adder?
+A full adder is an advanced combinational circuit that adds three binary digits simultaneously: two input bits (A and B) plus a carry-in bit from a previous lower-significant stage. It generates two outputs: a Sum bit and a carry-out bit.
+Unlike the half adder, the full adder can propagate carries, allowing multiple units to be chained together for multi-bit addition. The logic combines XOR operations for the Sum and a combination of AND-OR logic for the Carry output, making it capable of handling overflow from previous calculations.
+3. What is a Parallel Adder?
+A parallel adder is a digital circuit architecture constructed by connecting multiple full adder units side-by-side to process multi-bit binary numbers simultaneously. Instead of adding bits one at a time serially, all corresponding bit pairs are processed at once.
+Each full adder in the chain handles one bit position, with the carry-out from each stage feeding into the carry-in of the next higher bit position. While all bits are processed in parallel, the final result depends on the carry rippling through the chain, making it faster than serial addition but with a speed limitation determined by the longest carry propagation path.
+4. What is the difference between an Adder and a Parallel Adder?
+The term "adder" is a broad category referring to any digital circuit that performs binary addition, encompassing half adders, full adders, and various configurations. It describes the fundamental mathematical operation without specifying the architecture or bit-width capability.
+A parallel adder, conversely, is a specific implementation that uses multiple full adders arranged in parallel to handle multi-bit operands simultaneously. While a basic adder might refer to a single-bit addition unit, a parallel adder specifically describes the stacked configuration that processes entire binary words (like 4-bit, 8-bit, or 16-bit numbers) at once, making it practical for computer arithmetic units.
+5. How many full adders are required to construct an m-bit parallel adder?
+To construct an m-bit parallel adder, you require m full adders.
+Each bit position in the binary number needs its own full adder to process that specific column of bits along with any carry from the previous position. For example, adding two 8-bit numbers requires eight full adders connected in cascade, with the carry-out from each stage feeding into the carry-in of the next stage. The first full adder in the chain can accept a carry-in of zero, while subsequent stages handle the propagated carries from lower significant bits.
