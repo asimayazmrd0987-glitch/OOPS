@@ -1,0 +1,5 @@
+=== Sales Report ===
+Date:29/04/2026
+Product           Price  Qty
+------------------------------
+Laptop            75000    5
